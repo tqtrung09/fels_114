@@ -4,11 +4,11 @@
 #
 # To use the locales, use `I18n.t`:
 #
-#     I18n.t 'hello'
+#     I18n.t "mes_form_login"
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t("about") %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -20,4 +20,36 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: "Welcome to the Fels_114"
+  about: "About"
+  contact: "Contact"
+  help: "Help"
+  fels_114: "fels_114"
+  signin: "Sign up now!"
+  login: "Login"
+  user:
+    signup: "Sign up"
+    create_accout: "Create my account"
+    alert_size: "Maximum file size is 5MB. Please choose a smaller file."
+  shared:
+    message_error: "The form contains"
+    error: "error"
+  session:
+    new_user: "New user?"
+    remember: "Remember me on this computer"
+  header:
+    home: "Home"
+    users: "Users"
+    profile: "Profile"
+    setting: "Settings"
+    logout: "Log out"
+    account: "Account"
+  footer:
+    me: "Tran.Quang.Trung@framgia.com"
+  helper:
+    base_title: "Ruby on Rails Tutorial Fels 114"
+  controller:
+    session:
+      message_form_login: "Invalid email/password combination"
+    user:
+      login_user: "Please log in."
