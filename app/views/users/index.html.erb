@@ -1,0 +1,11 @@
+<% provide(:title, t("user.index")) %>
+<h1><%= t "user.list_user" %></h1>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= user.avatar? ? image_tag(user.avatar.url) : gravatar_for(user) %>
+      <%= link_to user.name, user %>
+    </li>
+  <% end %>
+</ul>
