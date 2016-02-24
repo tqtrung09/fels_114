@@ -31,6 +31,12 @@ en:
     signup: "Sign up"
     create_accout: "Create my account"
     alert_size: "Maximum file size is 5MB. Please choose a smaller file."
+    edit: "Edit"
+    index: "Index"
+    list_user: "All users"
+    password_confirm: "Confirmation"
+    save_button: "Save changes"
+    create_button: "Create my account"
   shared:
     message_error: "The form contains"
     error: "error"
@@ -53,3 +59,4 @@ en:
       message_form_login: "Invalid email/password combination"
     user:
       login_user: "Please log in."
+      message_success_update: "Profile updated"
