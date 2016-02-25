@@ -1,4 +1,4 @@
-<%= form_for @category do |f| %>
+<%= form_for [:admin, @category] do |f| %>
   <%= render "shared/error_messages", object: @category %>
   <div class="field">
     <%= f.label :name %>
