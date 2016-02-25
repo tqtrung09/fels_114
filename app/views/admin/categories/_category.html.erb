@@ -1,0 +1,9 @@
+<li>
+  <strong><%= category.name %></strong>
+  <h4><%= category.content %></h4>
+  <%= link_to t("edit"), edit_admin_category_path(category),
+    class: "btn btn-lg btn-primary" %>
+  <%= link_to t("delete"), admin_category_path(category),
+    method: :delete, data: {confirm: t("confirm_delete")},
+      class: "btn btn-lg btn-primary" %>
+</li>

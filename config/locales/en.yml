@@ -29,11 +29,12 @@ en:
   login: "Login"
   confirm_delete: "You sure?"
   delete: "Delete"
+  not_admin: "You have not access!"
+  edit: "Edit"
   user:
     signup: "Sign up"
     create_accout: "Create my account"
     alert_size: "Maximum file size is 5MB. Please choose a smaller file."
-    edit: "Edit"
     index: "Index"
     list_user: "All users"
     password_confirm: "Confirmation"
@@ -62,6 +63,8 @@ en:
     create_button: "Create category"
     category_title: "Categories"
     start: "Start"
+    edit_button: "Update category"
+    message_success_update: "Category updated"
 
   controller:
     session:
