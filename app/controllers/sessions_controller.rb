@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_to user
+      redirect_to admin? ? admin_users_path : user
     else
       flash[:danger] = t "controller.session.message_form_login"
       render :new
