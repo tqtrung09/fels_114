@@ -19,9 +19,11 @@ module SessionsHelper
   end
 
   def log_out
-    forget current_user
-    session.delete :user_id
-    @current_user = nil
+    if logged_in?
+      forget current_user
+      session.delete :user_id
+      @current_user = nil
+    end
   end
 
   def remember user
@@ -53,5 +55,21 @@ module SessionsHelper
 
   def current_user? user
     user == current_user
+  end
+
+  def admin_user
+    redirect_to root_url unless current_user.admin?
+  end
+
+  def admin?
+    current_user.admin?
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t "controller.user.login_user"
+      redirect_to login_url
+    end
   end
 end

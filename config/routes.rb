@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    root "categories#index"
+    resources :users
+    resources :categories
+  end
 
   root "static_pages#home"
   get "help" => "static_pages#help"
@@ -9,6 +14,7 @@ Rails.application.routes.draw do
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
   resources :users
+  resources :categories
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

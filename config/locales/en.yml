@@ -27,6 +27,8 @@ en:
   fels_114: "fels_114"
   signin: "Sign up now!"
   login: "Login"
+  confirm_delete: "You sure?"
+  delete: "Delete"
   user:
     signup: "Sign up"
     create_accout: "Create my account"
@@ -40,6 +42,8 @@ en:
   shared:
     message_error: "The form contains"
     error: "error"
+    words: "Words"
+    lesson: "Lesson"
   session:
     new_user: "New user?"
     remember: "Remember me on this computer"
@@ -54,9 +58,17 @@ en:
     me: "Tran.Quang.Trung@framgia.com"
   helper:
     base_title: "Ruby on Rails Tutorial Fels 114"
+  category:
+    create_button: "Create category"
+    category_title: "Categories"
+    start: "Start"
+
   controller:
     session:
       message_form_login: "Invalid email/password combination"
     user:
       login_user: "Please log in."
       message_success_update: "Profile updated"
+      message_success_delete: "User deleted"
+    category:
+      congratulations: "Add category complete"
