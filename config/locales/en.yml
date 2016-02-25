@@ -29,6 +29,7 @@ en:
   login: "Login"
   confirm_delete: "You sure?"
   delete: "Delete"
+  not_admin: "You have not access!"
   user:
     signup: "Sign up"
     create_accout: "Create my account"
