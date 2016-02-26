@@ -65,7 +65,12 @@ en:
     start: "Start"
     edit_button: "Update category"
     message_success_update: "Category updated"
-
+  user_follow:
+    view_profile: "view my profile"
+    unfollow: "Unfollow"
+    follow: "Follow"
+    following: "Following"
+    followers: "Followers"
   controller:
     session:
       message_form_login: "Invalid email/password combination"
