@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225151122) do
+ActiveRecord::Schema.define(version: 20160226085217) do
+
+  create_table "answers", force: :cascade do |t|
+    t.string   "content"
+    t.boolean  "correct"
+    t.integer  "word_id"
+    t.integer  "lesson_word_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "answers", ["lesson_word_id"], name: "index_answers_on_lesson_word_id"
+  add_index "answers", ["word_id"], name: "index_answers_on_word_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +31,29 @@ ActiveRecord::Schema.define(version: 20160225151122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "lesson_words", force: :cascade do |t|
+    t.integer  "lesson_id"
+    t.integer  "word_id"
+    t.integer  "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "lesson_words", ["answer_id"], name: "index_lesson_words_on_answer_id"
+  add_index "lesson_words", ["lesson_id"], name: "index_lesson_words_on_lesson_id"
+  add_index "lesson_words", ["word_id"], name: "index_lesson_words_on_word_id"
+
+  create_table "lessons", force: :cascade do |t|
+    t.boolean  "result",      default: false
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "lessons", ["category_id"], name: "index_lessons_on_category_id"
+  add_index "lessons", ["user_id"], name: "index_lessons_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
@@ -43,5 +78,15 @@ ActiveRecord::Schema.define(version: 20160225151122) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "words", force: :cascade do |t|
+    t.string   "content"
+    t.string   "image"
+    t.integer  "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "words", ["category_id"], name: "index_words_on_category_id"
 
 end
