@@ -1,5 +1,6 @@
 class Admin::WordsController < Admin::ActionBaseController
   before_action :load_category, only: [:create, :update]
+  before_action :load_word, only: [:edit, :destroy, :update]
 
   def new
   end
@@ -15,7 +16,6 @@ class Admin::WordsController < Admin::ActionBaseController
   end
 
   def edit
-
   end
 
   def show
@@ -23,11 +23,17 @@ class Admin::WordsController < Admin::ActionBaseController
   end
 
   def update
-
+    if @word.update_attributes word_params
+      flash[:success] = t "controller.word.updated"
+      redirect_to admin_category_path @category
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @word.destroy
+    redirect_to admin_category_path @word.category
   end
 
   private
@@ -38,5 +44,9 @@ class Admin::WordsController < Admin::ActionBaseController
   def word_params
     params.require(:word).permit(:category_id ,:content, :sound,
       answers_attributes: [:id, :content, :correct, :_destroy])
+  end
+
+  def load_word
+    @word = Word.find_by id: params[:id]
   end
 end
