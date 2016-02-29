@@ -1,0 +1,9 @@
+<div class="fields">
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :content, t("answers.answer") %>
+  <%= f.text_field :content, class: "form-control" %>
+  <%= f.label :correct, class: "checkbox inline" do %>
+  <%= f.check_box :correct %>
+    <span><%= t "answers.correct" %></span>
+  <% end %>
+</div>
