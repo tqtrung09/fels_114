@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     root "users#index"
     resources :users
     resources :categories
+    resources :words
   end
 
   root "static_pages#home"
@@ -16,7 +17,8 @@ Rails.application.routes.draw do
   resources :users
   resources :categories
   resources :relationships, only: [:index, :create, :destroy]
-
+  resources :words
+  resources :lessons
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,10 @@
+<%= form_for [:admin, @word] do |f| %>
+  <%= render "shared/error_messages", object: @word %>
+  <%= f.hidden_field :category_id, value: @word.category.id %>
+  <%= f.label :word %>
+  <%= f.text_field :content, class: "form-control" %>
+  <%= f.fields_for :answers do |answer| %>
+    <%= render "admin/words/answer", f: answer %>
+  <% end %>
+  <%= f.submit t("create"), class: "btn-primary" %>
+<% end %>

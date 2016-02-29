@@ -31,6 +31,8 @@ en:
   delete: "Delete"
   not_admin: "You have not access!"
   edit: "Edit"
+  create: "Create"
+  update: "Update"
   user:
     signup: "Sign up"
     create_accout: "Create my account"
@@ -65,12 +67,17 @@ en:
     start: "Start"
     edit_button: "Update category"
     message_success_update: "Category updated"
+    add_word: "Add word"
+    word_of_category: "Word's Category"
   user_follow:
     view_profile: "view my profile"
     unfollow: "Unfollow"
     follow: "Follow"
     following: "Following"
     followers: "Followers"
+  answers:
+    correct: "correct"
+    answer: "answer"
   controller:
     session:
       message_form_login: "Invalid email/password combination"
@@ -80,3 +87,5 @@ en:
       message_success_delete: "User deleted"
     category:
       congratulations: "Add category complete"
+    word:
+      created: "Word created"
