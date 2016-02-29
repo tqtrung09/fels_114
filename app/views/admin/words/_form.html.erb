@@ -6,5 +6,5 @@
   <%= f.fields_for :answers do |answer| %>
     <%= render "admin/words/answer", f: answer %>
   <% end %>
-  <%= f.submit t("create"), class: "btn-primary" %>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
