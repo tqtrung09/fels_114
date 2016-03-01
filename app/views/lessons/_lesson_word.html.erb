@@ -1,0 +1,13 @@
+<div class="col-md-6 col-md-offset-3">
+  <li>
+    <strong><%= f.object.word.content %></strong>
+    <% f.object.word.answers.each do |answer| %>
+      <div class="row">
+        <%= answer.content %>
+        <div class="col-sm-1">
+          <%= f.radio_button :answer_id, answer.id %>
+        </div>
+      </div>
+    <% end %>
+  </li>
+</div>

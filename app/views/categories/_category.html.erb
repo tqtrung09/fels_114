@@ -1,5 +1,8 @@
 <li>
   <strong><%= category.name %></strong>
   <h4><%= category.content %></h4>
-  <%= link_to t("category.start"), "#", class: "btn btn-lg btn-primary" %>
+  <%= form_for @lesson do |f| %>
+    <%= f.hidden_field :category_id, value: category.id %>
+    <%= f.submit t("category.start"), class: "btn btn-primary" %>
+  <% end %>
 </li>

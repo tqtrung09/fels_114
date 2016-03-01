@@ -5,8 +5,9 @@
       <div class="row">
         <div class="col-xs-8 col-sm-6">
           <%= select_tag :category_id,
-            options_from_collection_for_select(@categories, :id, :name),
-              include_blank: t("words.all"), class: "form-control" %>
+            options_from_collection_for_select(
+            @categories, :id, :name, params[:category_id]),
+            include_blank: t("words.filter.all"), class: "form-control" %>
         </div>
         <div class="col-xs-4 col-sm-6">
         <% Settings.filter_option.each do |of| %>
