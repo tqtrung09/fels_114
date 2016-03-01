@@ -78,6 +78,13 @@ en:
   answers:
     correct: "correct"
     answer: "answer"
+  words:
+    filter_tag: "Filter"
+    pdf: "PDF"
+    filter:
+      all: "All"
+      learned: "Learned"
+      not_learned: "Not Learned"
   controller:
     session:
       message_form_login: "Invalid email/password combination"
