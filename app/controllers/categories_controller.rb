@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.paginate page: params[:page]
+    @lesson = Lesson.new
   end
 
   def show

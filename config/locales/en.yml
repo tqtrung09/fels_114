@@ -97,3 +97,6 @@ en:
     word:
       created: "Word created"
       updated: "Word updated"
+    lesson:
+      message_success_create: "Lesson created, let do it"
+      submit: "Submit"

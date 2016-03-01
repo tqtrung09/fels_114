@@ -3,3 +3,4 @@ filter_option:
   - learned
   - not_learned
   - all
+number_lesson_words: 3
