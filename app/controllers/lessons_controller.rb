@@ -14,11 +14,27 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find_by id: params[:id]
+    @true_answers = @lesson.lesson_words.true_answers
+  end
+
+  def update
+    @lesson = Lesson.find_by id: params[:id]
+    if @lesson.update_attributes lesson_params
+      flash[:success] = t "lesson.complete"
+    else
+      flash[:danger] = t "lesson.fail"
+    end
+    redirect_to @lesson
   end
 
   private
   def load_category
     @category = Category.find_by id: params[:lesson][:category_id]
     redirect_to categories_path unless @category
+  end
+
+  def lesson_params
+    params.require(:lesson).permit :result,
+      lesson_words_attributes: [:id, :answer_id]
   end
 end
