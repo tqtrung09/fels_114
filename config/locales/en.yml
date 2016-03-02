@@ -85,6 +85,16 @@ en:
       all: "All"
       learned: "Learned"
       not_learned: "Not Learned"
+  lesson:
+    true: "True"
+    false: "False"
+    no_choose: "You don't answer it"
+    complete: "Congratulations you completed lesson!"
+    fail: "Please try again test!"
+    correct: "Correct"
+    question: "Questions"
+    answer: "Answers"
+    result: "Result"
   controller:
     session:
       message_form_login: "Invalid email/password combination"
