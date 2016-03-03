@@ -1,6 +1,6 @@
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-3">
       <section class="user_info">
         <%= render "shared/user_info" %>
       </section>
@@ -9,7 +9,16 @@
       </section>
     </aside>
     <div class="col-md-8">
+      <div class="col-md-3 .col-md-offset-5"></div>
       <%= render "shared/navigator" %>
+      <div>
+        <% if @activities.any? %>
+          <ul class="users home">
+            <%= render @activities %>
+          </ul>
+          <%= will_paginate @activities %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% else %>

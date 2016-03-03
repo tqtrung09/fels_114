@@ -81,6 +81,7 @@ en:
   words:
     filter_tag: "Filter"
     pdf: "PDF"
+    remove: "Remove"
     filter:
       learned: "Learned"
       not_learned: "Not Learned"
@@ -95,6 +96,8 @@ en:
     question: "Questions"
     answer: "Answers"
     result: "Result"
+  activity:
+    words_in_lesson: "Words in Lesson"
   controller:
     session:
       message_form_login: "Invalid email/password combination"

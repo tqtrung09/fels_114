@@ -1,0 +1,11 @@
+<div class="row"></div>
+<div class="col-md-4">
+  <%= render activity.user %>
+</div>
+<div class="col-md-7"><br/><br/>
+  <%= activity.action_type.capitalize  %>
+  <%= activity.load_lesson.lesson_words.count %>
+  <%= t "activity.words_in_lesson" %>
+  <%= activity.load_lesson.category.name %>
+  -(<%= activity.created_at.strftime("%F") %>)
+</div>
