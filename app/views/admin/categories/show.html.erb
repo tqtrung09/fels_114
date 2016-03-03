@@ -2,14 +2,14 @@
 <%= link_to t("category.category_title"), admin_categories_path,
   class: "btn btn-lg btn-primary" %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-4 left">
     <section class="user_info">
       <%= @category.name %> <br/>
       <%= @category.content %>
       <%= render "admin/words/form" %>
     </section>
   </aside>
-  <div class="col-md-8">
+  <div class="col-md-7">
     <strong> <%= t "caterogy.word_of_category"%></strong>
     <ol class="words">
       <%= render @words %>
