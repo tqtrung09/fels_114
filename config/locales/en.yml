@@ -82,9 +82,9 @@ en:
     filter_tag: "Filter"
     pdf: "PDF"
     filter:
-      all: "All"
       learned: "Learned"
       not_learned: "Not Learned"
+      all_words: "All"
   lesson:
     true: "True"
     false: "False"
