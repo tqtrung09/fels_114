@@ -29,12 +29,10 @@ ActiveRecord::Schema.define(version: 20160303063148) do
     t.string   "content"
     t.boolean  "correct"
     t.integer  "word_id"
-    t.integer  "lesson_word_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "answers", ["lesson_word_id"], name: "index_answers_on_lesson_word_id"
   add_index "answers", ["word_id"], name: "index_answers_on_word_id"
 
   create_table "categories", force: :cascade do |t|

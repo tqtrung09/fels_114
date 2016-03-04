@@ -1,6 +1,7 @@
 class Word < ActiveRecord::Base
   belongs_to :category
   has_many :answers, dependent: :destroy
+  has_many :lesson_words, dependent: :destroy
 
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc {|answer| answer[:content].blank?}

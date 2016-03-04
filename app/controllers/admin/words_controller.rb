@@ -12,7 +12,6 @@ class Admin::WordsController < Admin::ActionBaseController
       redirect_to admin_category_path @category
     else
       @words = @category.words.paginate page: params[:page]
-      Settings.number_answers.times{answers = @word.answers.build}
       render "admin/categories/show"
     end
   end
