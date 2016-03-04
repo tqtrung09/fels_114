@@ -1,0 +1,13 @@
+<p>
+  <table>
+    <tr>
+      <td><%= f.label :content, t("answers.answer") %></td>
+      <td><%= f.text_field :content, class: "form-control" %></td>
+      <td><%= f.label :correct, class: "checkbox inline" do %>
+        <%= f.check_box :correct %>
+          <span><%= t "answers.correct" %></span>
+        <% end %></td>
+      <td><%= link_to_remove_fields t("remove"), f %></td>
+    </tr>
+  </table>
+</p>

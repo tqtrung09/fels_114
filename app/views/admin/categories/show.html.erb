@@ -2,7 +2,7 @@
 <%= link_to t("category.category_title"), admin_categories_path,
   class: "btn btn-lg btn-primary" %>
 <div class="row">
-  <aside class="col-md-4 left">
+  <aside class="col-md-5 left">
     <section class="user_info">
       <%= @category.name %> <br/>
       <%= @category.content %>
@@ -12,7 +12,15 @@
   <div class="col-md-7">
     <strong> <%= t "caterogy.word_of_category"%></strong>
     <ol class="words">
-      <%= render @words %>
+      <% @words.each do |word| %>
+        <li>
+          <%= link_to word.content,
+            edit_admin_category_word_path(word.category, word) %> |
+          <%= link_to t("delete"),
+            admin_category_word_path(word.category, word),
+            method: :delete, data: {confirm: t("confirm_delete")} %>
+        </li>
+      <% end %>
     </ol>
     <%= will_paginate @words %>
   </div>

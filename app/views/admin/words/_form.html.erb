@@ -1,10 +1,11 @@
-<%= form_for [:admin, @word] do |f| %>
-  <%= render "shared/error_messages", object: @word %>
-  <%= f.hidden_field :category_id, value: @word.category.id %>
+<%= form_for [:admin, @category, @word] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.hidden_field :category_id, value: @category.id %>
   <%= f.label :word %>
   <%= f.text_field :content, class: "form-control" %>
   <%= f.fields_for :answers do |answer| %>
-    <%= render "admin/words/answer", f: answer %>
+    <%= render "admin/words/answer_fields", f: answer %>
   <% end %>
+ <p><%= link_to_add_fields t("add"), f, :answers %></p>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

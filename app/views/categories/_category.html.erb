@@ -3,6 +3,8 @@
   <h4><%= category.content %></h4>
   <%= form_for @lesson do |f| %>
     <%= f.hidden_field :category_id, value: category.id %>
-    <%= f.submit t("category.start"), class: "btn btn-primary" %>
+    <div class="col-md-1">
+      <%= f.submit t("category.start"), class: "btn btn-primary" %>
+    </div>
   <% end %>
 </li>

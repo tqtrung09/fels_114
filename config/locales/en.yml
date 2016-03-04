@@ -33,6 +33,9 @@ en:
   edit: "Edit"
   create: "Create"
   update: "Update"
+  user_admin: "Users"
+  category_admin: "Categories"
+  admin: "Admin"
   user:
     signup: "Sign up"
     create_accout: "Create my account"
@@ -82,6 +85,8 @@ en:
     filter_tag: "Filter"
     pdf: "PDF"
     remove: "Remove"
+    add: "Add"
+    validate_correct: "Just only choose one correct"
     filter:
       learned: "Learned"
       not_learned: "Not Learned"

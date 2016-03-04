@@ -1,5 +1,5 @@
 class Admin::WordsController < Admin::ActionBaseController
-  before_action :load_category, only: [:create, :update]
+  before_action :load_category, only: [:edit, :create, :update]
   before_action :load_word, only: [:edit, :destroy, :update]
 
   def new
@@ -11,7 +11,9 @@ class Admin::WordsController < Admin::ActionBaseController
       flash[:success] = t "controller.word.created"
       redirect_to admin_category_path @category
     else
-      redirect_to admin_category_path @category
+      @words = @category.words.paginate page: params[:page]
+      Settings.number_answers.times{answers = @word.answers.build}
+      render "admin/categories/show"
     end
   end
 
@@ -38,7 +40,7 @@ class Admin::WordsController < Admin::ActionBaseController
 
   private
   def load_category
-    @category = Category.find_by id: params[:word][:category_id]
+    @category = Category.find_by id: params[:category_id]
   end
 
   def word_params
